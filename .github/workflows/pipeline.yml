@@ -22,24 +22,24 @@ jobs:
         run: npm run eslint
       - name: build
         run: npm run build
-      - name: test
-        run: npm test
-      - name: e2e tests
-        uses: cypress-io/github-action@v2
-        with:
-          command: npm run test:e2e
-          start: npm run start-prod
-          wait-on: http://localhost:5000
-      - name: heroku deploy
-        if: ${{ github.event_name == 'push' }}
-        uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: 'blooming-depths-88350'
-          heroku_email: 'hornathanjon@gmail.com'
-          healthcheck: 'https://blooming-depths-88350.herokuapp.com/health'
-          checkstring: 'ok'
-          rollbackonhealthcheckfailed: true
+      # - name: test
+      #   run: npm test
+      # - name: e2e tests
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     command: npm run test:e2e
+      #     start: npm run start-prod
+      #     wait-on: http://localhost:5000
+      # - name: heroku deploy
+      #   if: ${{ github.event_name == 'push' }}
+      #   uses: akhileshns/heroku-deploy@v3.12.12
+      #   with:
+      #     heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+      #     heroku_app_name: 'blooming-depths-88350'
+      #     heroku_email: 'hornathanjon@gmail.com'
+      #     healthcheck: 'https://blooming-depths-88350.herokuapp.com/health'
+      #     checkstring: 'ok'
+      #     rollbackonhealthcheckfailed: true
       - name: Bump version and push tag
         if: ${{ github.event_name == 'push' }}
         uses: anothrNick/github-tag-action@1.33.0
