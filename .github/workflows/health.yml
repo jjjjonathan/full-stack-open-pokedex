@@ -1,15 +1,15 @@
-name: Scheduled health check
+# name: Scheduled health check
 
-on:
-  schedule:
-    - cron: '0 4 * * *'
+# on:
+#   schedule:
+#     - cron: '0 4 * * *'
 
-jobs:
-  hello_world_job:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Check the deployed service URL
-        uses: jtalk/url-health-check-action@v1.5
-        with:
-          url: 'https://blooming-depths-88350.herokuapp.com/health'
-          follow-redirect: no
+# jobs:
+#   hello_world_job:
+#     runs-on: ubuntu-18.04
+#     steps:
+#       - name: Check the deployed service URL
+#         uses: jtalk/url-health-check-action@v1.5
+#         with:
+#           url: 'https://blooming-depths-88350.herokuapp.com/health'
+#           follow-redirect: no
