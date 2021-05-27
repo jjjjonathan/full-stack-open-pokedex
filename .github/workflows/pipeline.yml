@@ -35,3 +35,4 @@ jobs:
           heroku_email: 'hornathanjon@gmail.com'
           healthcheck: 'https://blooming-depths-88350.herokuapp.com/health'
           checkstring: 'ok'
+          rollbackonhealthcheckfailed: true
