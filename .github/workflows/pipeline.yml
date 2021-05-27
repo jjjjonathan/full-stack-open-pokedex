@@ -33,3 +33,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'blooming-depths-88350'
           heroku_email: 'hornathanjon@gmail.com'
+          healthcheck: 'https://blooming-depths-88350.herokuapp.com/health'
+          checkstring: 'ok'
